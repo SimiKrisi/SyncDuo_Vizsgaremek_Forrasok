@@ -1,0 +1,26 @@
+<?php
+include __DIR__ . '/../connection.php';
+include __DIR__ . '/../constants.php';
+include __DIR__ . '/../functions.php';
+include __DIR__ . '/../headers.php';
+
+try {
+    // --- API kulcs validálása ---
+    $apiKeyType = validateApiKey();
+    
+    // --- 1. id kinyerése GET-ből ---
+    $id = getIdFromRequest();
+    if (!$id) {
+        throw new Exception("Missing id");
+    }
+    // --- 2. Oszlopok validálása és összeállítása ---
+    $allowedFields = getAllowedSelectFields('dailychallenges', $apiKeyType);
+    $columns = parseAndValidateColumnsForSelect($allowedFields);
+    // --- 3. SQL összeállítása ---
+    $sql = "SELECT $columns FROM daily_challenges WHERE dailyc_id = :id";
+    // --- 4. Lekérdezés és válasz ---
+    executeAndRespondForSelect($pdo, $sql, ['id' => $id]);
+} catch (Exception $e) {
+    // --- 5. Hibakezelés ---
+    sendErrorResponse($e);
+}
