@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "293128535698",
+    "firebase_url": "https://syncduo-1022c.firebaseio.com",
+    "project_id": "syncduo-1022c",
+    "storage_bucket": "syncduo-1022c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293128535698:android:03f006a52014abcb5ff04b",
+        "android_client_info": {
+          "package_name": "com.FaDiSi.SyncDuo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "293128535698-0ap0s3pbeailt06vbhfl65h52vrfvk2b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_mzvNgQu0o0UFpwAckf5LwZBe25I6SNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "293128535698-0ap0s3pbeailt06vbhfl65h52vrfvk2b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

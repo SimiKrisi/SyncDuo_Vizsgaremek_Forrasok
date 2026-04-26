@@ -1,0 +1,283 @@
+body{
+background:#000;
+color:white;
+font-family: 'Press Start 2P', cursive; /* Makes the WHOLE site pixelated */
+}
+
+.hero{
+
+background-image:url("../images/mainbackground.svg");
+
+background-size:cover;
+background-position:center;
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+}
+
+.logo{
+max-width:400px;
+}
+
+.store-btn{
+width:200px;
+margin:10px;
+}
+
+.navbar{
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+}
+
+
+.play-btn{
+
+width:80px;
+height:80px;
+
+border-radius:50%;
+
+background:#ffcc00;
+
+border:none;
+
+font-size:30px;
+
+}
+
+.navbar-logo{
+height:40px;
+width:auto;
+}
+
+
+/* intro animation & hero logo */
+.intro-overlay {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.intro-logo {
+  width: 880px;
+  max-width: 60vw;
+}
+
+/* NEW: We animate the wrapper now, so the button travels with the logo! */
+.hero-content-wrapper {
+  transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+.logo-settled {
+  transform: scale(1) translateY(-20vh); 
+}
+
+/* NEW: Download Button Styling */
+.download-btn {
+  opacity: 0;                   /* Invisible at start */
+  pointer-events: auto;         /* Makes it clickable! */
+  transition: opacity 0.8s ease; /* Smooth fade in */
+  
+  /* Placeholder styles until you add your image */
+  padding: 15px 50px;
+  font-size: 32px;
+  font-weight: bold;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+.download-btn.reveal {
+  opacity: 1; /* Makes it visible */
+}
+
+
+/* Hero kép szekció */
+/* Hero kép szekció */
+.hero-image-section {
+  width: 100%;
+  height: 100vh;           /* teljes képernyő magasság */
+  overflow: hidden;
+  position: relative;
+  background-image: url("/images/medieval-background.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* kép kitölti a területet, arány megmarad */
+  object-position: center;
+  display: block;
+}
+
+#news {
+    background-image: url('../images/mainbackground.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* --- THE SIMPLE FADE-IN NEWS BANNER --- */
+.news-banner {
+    background-image: url('../images/text-background.svg'); 
+    background-size: 100% 100%; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    
+    /* The 'auto' on left and right forces the box to the exact center of the page */
+    margin: 100px auto 30px auto; 
+    
+    width: 90%;          
+    max-width: 1200px; /* Shrunk the max-width slightly so it looks more like a neat banner */
+    height: 150px;       
+    
+    /* Flexbox guarantees the text inside stays dead center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: #111; 
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    line-height: 1.5;  
+    
+    opacity: 0;
+    transform: translateY(40px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.news-banner.show {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+/* --- RETRO NEWS CARDS --- */
+.news-card {
+    background-image: url('../images/text-background.svg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    width: 90%;
+    max-width: 800px; 
+    
+    /* FIX: Keeps the text neatly inside the white box without touching the black border */
+    box-sizing: border-box; 
+    padding: 60px 70px; 
+    
+    color: #111;
+    font-family: 'Press Start 2P', cursive;
+    text-align: left; 
+}
+
+.news-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.news-date {
+    font-size: 0.7rem;
+    color: #555; 
+    margin-bottom: 20px;
+}
+
+.news-content {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+
+
+
+
+/* kids */
+.kid-cube {
+    position: absolute;
+    bottom: -5px; 
+    left: 0;      
+    height: 18vh; 
+    width: auto;
+    will-change: transform; 
+    
+    /* Make them look grab-able and prevent mobile scrolling */
+    cursor: grab;
+    touch-action: none; 
+    
+    /* --- THE FIXES --- */
+    pointer-events: auto;      /* Lets you click them despite the parent container! */
+    -webkit-user-drag: none;   /* Stops the browser's default "save image" drag */
+    user-select: none;         /* Stops the browser from trying to highlight them */
+}
+
+/* Change cursor when actively holding a kid */
+.kid-cube:active {
+    cursor: grabbing;
+}
+
+
+/* Scrolling*/
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.hero-image-section, .hero, /* és a többi szekció */ section {
+  scroll-snap-align: start;
+}
+
+
+
+
+/* --- PLAYABLE GAME SECTION BACKGROUND --- */
+#play {
+    /* Ugyanaz a háttérkép, amit a hírfolyam is használ! */
+    background-image: url('../images/mainbackground.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* --- THE GAME CONTAINER --- */
+.game-container {
+    border: 8px solid #000;
+    border-radius: 4px;
+    background: #000;
+    box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.4);
+    
+    width: 90%;
+    /* Mivel ez egy telefonos játék, a doboz ne legyen túl széles asztali gépen sem */
+    max-width: 400px; 
+    
+    /* ZSENIÁLIS TRÜKK: Függőleges, telefonos képarányba kényszeríti az iframe-et! */
+    aspect-ratio: 9 / 16; 
+    overflow: hidden;
+}
+
+.game-container iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
