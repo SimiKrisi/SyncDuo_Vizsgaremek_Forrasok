@@ -9,10 +9,18 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 
+
 namespace ApiForGame
 {
     internal class GameApi
     {
+        private const int RequestTimeoutSeconds = 10;
+        private const int FailureCooldownSeconds = 20;
+        private const int MaxConsecutiveFailures = 3;
+
+        private static int consecutiveFailures;
+        private static DateTime blockedUntilUtc = DateTime.MinValue;
+
         private readonly HttpClient _client;
         private readonly string server = "http://192.168.0.151:8000";
         //http://10.192.111.132:8000
@@ -121,8 +129,52 @@ namespace ApiForGame
 
         #endregion     
 
+        private static bool IsOffline()
+        {
+            return UnityEngine.Application.internetReachability == UnityEngine.NetworkReachability.NotReachable;
+        }
+
+        private static bool IsApiTemporarilyBlocked()
+        {
+            return DateTime.UtcNow < blockedUntilUtc;
+        }
+
+        private static void RegisterRequestSuccess()
+        {
+            consecutiveFailures = 0;
+            blockedUntilUtc = DateTime.MinValue;
+        }
+
+        private static void RegisterRequestFailure()
+        {
+            consecutiveFailures++;
+
+            if (consecutiveFailures >= MaxConsecutiveFailures)
+            {
+                blockedUntilUtc = DateTime.UtcNow.AddSeconds(FailureCooldownSeconds);
+            }
+        }
+
+        private static void RegisterImmediateBlock()
+        {
+            blockedUntilUtc = DateTime.UtcNow.AddSeconds(FailureCooldownSeconds);
+        }
+
         private async Task<string> SendRequestAsync(HttpMethod method, string endpoint, object data = null)
         {
+            if (IsOffline())
+            {
+                RegisterImmediateBlock();
+                UnityEngine.Debug.LogWarning($"[API] Offline állapot. Kérés kihagyva: {endpoint}");
+                return string.Empty;
+            }
+
+            if (IsApiTemporarilyBlocked())
+            {
+                UnityEngine.Debug.LogWarning($"[API] Átmeneti tiltás aktív. Kérés kihagyva: {endpoint}");
+                return string.Empty;
+            }
+
             string url = $"{server}/{endpoint}";
 
             // --- GET / DELETE esetén query string generálás ---
@@ -155,6 +207,8 @@ namespace ApiForGame
             }
             using (UnityEngine.Networking.UnityWebRequest request = new UnityEngine.Networking.UnityWebRequest(url, method.Method))
             {
+                request.timeout = RequestTimeoutSeconds;
+
                 // API Kulcs beállítása
                 if (!string.IsNullOrEmpty(_apiKey) && _apiKey != "REPLACE_WITH_YOUR_API_KEY")
                 {
@@ -180,12 +234,19 @@ namespace ApiForGame
                 // Eredmény ellenõrzése
                 if (request.result == UnityEngine.Networking.UnityWebRequest.Result.Success)
                 {
+                    RegisterRequestSuccess();
                     return request.downloadHandler.text;
                 }
                 else
                 {
+                    RegisterRequestFailure();
+                    if (consecutiveFailures >= MaxConsecutiveFailures)
+                    {
+                        blockedUntilUtc = DateTime.UtcNow.AddSeconds(FailureCooldownSeconds);
+                    }
+
                     // Ha a telefonon hiba van, a Logcatben most már TÖKÉLETESEN fogjuk látni!
-                    UnityEngine.Debug.LogError($"? [API HIBA] Végpont: {endpoint} | Ok: {request.error} | Válasz: {request.downloadHandler.text}");
+                    UnityEngine.Debug.LogError($"[API HIBA] Végpont: {endpoint} | Ok: {request.error} | Válasz: {request.downloadHandler.text}");
                     return "";
                 }
             }
@@ -324,7 +385,7 @@ namespace ApiForGame
             return await SendRequestAsync(HttpMethod.Delete, "dailychallenges/delete.php", new { id = DCId });
         }
 
-        
+
         #endregion
 
         #region-------LEADERBOARD DAILYC-------
@@ -594,3 +655,4 @@ namespace ApiForGame
         #endregion
     }
 }
+

@@ -376,7 +376,7 @@ public class GameDataManager : MonoBehaviour
             SyncDataToCloud();
         }
     }
-   
+
 
     /// <summary>
     /// Menti az adatokat helyi fájlba.
@@ -562,7 +562,7 @@ public class GameDataManager : MonoBehaviour
         isCloudSyncInProgress = true;
 
         Debug.Log("[GameDataManager][Cloud] Szinkronizáció indítása.");
-        
+
         string localUserId = currentProfile.userId;
         string userName = currentProfile.userName;
         string googleId = "";
@@ -789,6 +789,7 @@ public class GameDataManager : MonoBehaviour
 
             string statRes = await api.SelectUserStat(cloudUserId, new { columns = "coins, levels_completed, best_speedrun_amount, best_dailyc_time" });
             EnsureApiResponse(statRes, "SelectUserStat");
+
             if (HasRows(statRes))
             {
                 JObject statRoot = JObject.Parse(statRes);
@@ -797,6 +798,7 @@ public class GameDataManager : MonoBehaviour
                 {
                     currentProfile.coins = (int)(statData["coins"] ?? currentProfile.coins);
                     currentProfile.maxLevelReached = (int)(statData["levels_completed"] ?? currentProfile.maxLevelReached);
+
                     string yesterdayDate = DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd");
 
                     if (statData["best_speedrun_amount"] != null)
@@ -842,7 +844,7 @@ public class GameDataManager : MonoBehaviour
 
                     foreach (var item in localWrapper.list)
                     {
-                        if (cloudItemIdSet.Contains(item.id) && (int)item.state != 1 && item.state !=(ShopItemState)2)
+                        if (cloudItemIdSet.Contains(item.id) && (int)item.state != 1 && item.state != (ShopItemState)2)
                         {
                             item.state = (ShopItemState)1;
                             changed = true;
@@ -1044,13 +1046,13 @@ public class GameDataManager : MonoBehaviour
 
             JObject gRoot = JObject.Parse(googleRes);
             JToken gData = gRoot["data"]?[0] ?? gRoot["result"]?[0];
-            string cloudUserId = gData?["user_id"]?.ToString();
-            string cloudDisplayName = gData?["display_name"]?.ToString();
+            string cloudUserIdFromApi = gData?["user_id"]?.ToString();
+            string cloudDisplayNameFromApi = gData?["display_name"]?.ToString();
 
-            if (!string.IsNullOrEmpty(cloudUserId) && cloudUserId != localUserId)
+            if (!string.IsNullOrEmpty(cloudUserIdFromApi) && cloudUserIdFromApi != localUserId)
             {
-                Debug.Log($"[GameDataManager][Cloud] Google ID másik userhez tartozik. Felhő profil visszaállítása... (Cloud ID: {cloudUserId})");
-                await RestoreLocalFromCloudAsync(cloudUserId, cloudDisplayName);
+                Debug.Log($"[GameDataManager][Cloud] Google ID másik userhez tartozik. Felhő profil visszaállítása... (Cloud ID: {cloudUserIdFromApi})");
+                await RestoreLocalFromCloudAsync(cloudUserIdFromApi, cloudDisplayNameFromApi);
                 return;
             }
 
@@ -1280,3 +1282,4 @@ public class GameDataManager : MonoBehaviour
 
     #endregion
 }
+
