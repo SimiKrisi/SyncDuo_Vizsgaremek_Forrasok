@@ -797,6 +797,19 @@ public class GameDataManager : MonoBehaviour
                 {
                     currentProfile.coins = (int)(statData["coins"] ?? currentProfile.coins);
                     currentProfile.maxLevelReached = (int)(statData["levels_completed"] ?? currentProfile.maxLevelReached);
+                    string yesterdayDate = DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd");
+
+                    if (statData["best_speedrun_amount"] != null)
+                    {
+                        int bestSpeedrun = (int)(statData["best_speedrun_amount"] ?? 0f);
+                        currentProfile.oneMinChallengesCompleted.Add(new OneMinChallengeRecord(bestSpeedrun));
+                    }
+
+                    if (statData["best_dailyc_time"] != null)
+                    {
+                        float bestDailyTime = (float)(statData["best_dailyc_time"] ?? 0f);
+                        currentProfile.dailyChallengesCompleted.Add(new DailyChallengeRecord(yesterdayDate, bestDailyTime));
+                    }
                 }
             }
 
