@@ -1,0 +1,110 @@
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.csproj.AssemblyReference.cache
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\MainWindow.g.cs
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\App.g.cs
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin_MarkupCompile.cache
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin_MarkupCompile.lref
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\SyncDuoAdmin.exe.config
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\SyncDuoAdmin.exe
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\SyncDuoAdmin.pdb
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Buffers.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.IO.Pipelines.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Memory.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Numerics.Vectors.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Text.Encodings.Web.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Text.Json.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Buffers.xml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.IO.Pipelines.xml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Memory.xml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Numerics.Vectors.xml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Text.Encodings.Web.xml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Text.Json.xml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\MainWindow.baml
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.g.resources
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.Properties.Resources.resources
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.csproj.GenerateResource.cache
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.csproj.CoreCompileInputs.cache
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoA.215D1E09.Up2Date
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.exe
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.pdb
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.exe.config
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\Newtonsoft.Json.dll
+E:\Suli\2025-2026\Mesterremek\Adatbázis\Adatbázis tesztek\V5\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\Newtonsoft.Json.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\SyncDuoAdmin.exe.config
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\SyncDuoAdmin.exe
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\SyncDuoAdmin.pdb
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\Newtonsoft.Json.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Buffers.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.IO.Pipelines.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Memory.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Numerics.Vectors.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Text.Encodings.Web.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Text.Json.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\Newtonsoft.Json.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Buffers.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.IO.Pipelines.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Memory.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Numerics.Vectors.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Text.Encodings.Web.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Text.Json.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.csproj.AssemblyReference.cache
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.exe.config
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\MainWindow.g.cs
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\App.g.cs
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin_MarkupCompile.cache
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin_MarkupCompile.lref
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\MainWindow.baml
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.g.resources
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.Properties.Resources.resources
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.csproj.GenerateResource.cache
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.csproj.CoreCompileInputs.cache
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoA.215D1E09.Up2Date
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.exe
+E:\Suli\2025-2026\Mesterremek\Végleges dolgok\SyncDuoAdmin\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.pdb
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\SyncDuoAdmin.exe.config
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\SyncDuoAdmin.exe
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\SyncDuoAdmin.pdb
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Buffers.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.IO.Pipelines.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Memory.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Text.Json.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\Newtonsoft.Json.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Buffers.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.IO.Pipelines.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Memory.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Text.Json.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.csproj.AssemblyReference.cache
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\MainWindow.g.cs
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\App.g.cs
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoAdmin_MarkupCompile.cache
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoAdmin_MarkupCompile.lref
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\MainWindow.baml
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.g.resources
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.Properties.Resources.resources
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.csproj.GenerateResource.cache
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.csproj.CoreCompileInputs.cache
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoA.215D1E09.Up2Date
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.exe
+C:\Users\krist\Desktop\Projekt\SyncDuo_Vizsgaremek_Forrasok\Desktop_Admin_WPF\SyncDuoAdmin\obj\Debug\SyncDuoAdmin.pdb

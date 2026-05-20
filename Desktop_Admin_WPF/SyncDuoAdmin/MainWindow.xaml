@@ -1,0 +1,322 @@
+﻿<Window x:Class="SyncDuoAdmin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SyncDuoAdmin"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Window.Resources>
+
+        <!-- Alap gomb stílus -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#3A6EA5"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#4C84C2"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#2E5A85"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- DataGrid stílus -->
+        <Style TargetType="DataGrid">
+            <Setter Property="RowHeight" Value="32"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <!-- ListBox stílus -->
+        <Style TargetType="ListBox">
+            <Setter Property="Background" Value="#F0F0F0"/>
+            <Setter Property="BorderBrush" Value="#CCCCCC"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <!-- ListBoxItem stílus -->
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Padding" Value="6"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="4">
+                            <ContentPresenter Margin="4"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#E0E0E0"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#3A6EA5"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </Window.Resources>
+
+
+    <Grid>        
+        <Button x:Name="dataViewer" Content="Data viewer" Visibility="Visible" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="300,100,0,0" VerticalAlignment="Top" Width="200" Click="AdminPage_Click"/>
+        <Button x:Name="editor" Content="Editor" Visibility="Visible" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="300,180,0,0" VerticalAlignment="Top" Width="200" Click="editor_Click" />
+        <Button x:Name="mazeEditor" Content="Maze Editor" Visibility="Visible" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="300,260,0,0" VerticalAlignment="Top" Width="200" Click="mazeEditor_Click"/>
+        <Button x:Name="exit" Content="Exit" Visibility="Visible" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="300,340,0,0" VerticalAlignment="Top" Width="200" Click="exit_Click"/>
+        <Rectangle x:Name="footer" Visibility="Collapsed" HorizontalAlignment="Center" Height="60" Margin="0,465,0,0" Stroke="Black" Fill="LightGray" VerticalAlignment="Top" Width="800"/>
+        <Button x:Name="home" Content="Home" Visibility="Collapsed" HorizontalAlignment="Left" Height="25" Margin="20,480,0,0" VerticalAlignment="Top" Width="100" Click="home_Click"/>
+        <Button x:Name="Submit_Button" Content="Save and export" Visibility="Collapsed" Width="130" HorizontalAlignment="Right" Height="25" Margin="0,480,20,0" Click="Submit_Button_Click"/>
+        <!--Button x:Name="reload" Content="Reload" Visibility="Collapsed" HorizontalAlignment="Left" Height="25" Margin="150,380,0,0" VerticalAlignment="Top" Width="100" Click="reload_Click"/>
+        <Button x:Name="apply" Content="Apply changes" Visibility="Collapsed" HorizontalAlignment="Right" Height="25" Margin="0,380,150,0" VerticalAlignment="Top" Width="100" Click="apply_Click"/>
+        <Button x:Name="delete" Content="Delete" Visibility="Collapsed" HorizontalAlignment="Right" Height="25" Margin="0,380,20,0" VerticalAlignment="Top" Width="100" Click="delete_Click"/-->
+        <TabControl x:Name="tabControl" Visibility="Collapsed" HorizontalAlignment="Center" Height="auto" MaxHeight="450" Margin="0,2,0,0" VerticalAlignment="Top" Width="800" SelectionChanged="tabcontrol_SelectionChanged">
+            <TabItem Header="users">
+                <DataGrid x:Name="usersDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="user_id" Binding="{Binding user_id}" Width="*"/>
+                        <DataGridTextColumn Header="google_id" Binding="{Binding google_id}" Width="*"/>
+                        <DataGridTextColumn Header="display_name" Binding="{Binding display_name}" Width="*"/>
+                        <DataGridTextColumn Header="created_at" Binding="{Binding created_at}" Width="*"/>
+                        <DataGridTextColumn Header="last_login" Binding="{Binding last_login}" Width="*"/>
+                        <DataGridTextColumn Header="status" Binding="{Binding status}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="user_stats">
+                <DataGrid x:Name="userStatsDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="user_id" Binding="{Binding user_id}" Width="*"/>
+                        <DataGridTextColumn Header="coins" Binding="{Binding coins}" Width="*"/>
+                        <DataGridTextColumn Header="best_speedrun_amount" Binding="{Binding best_speedrun_amount}" Width="*"/>
+                        <DataGridTextColumn Header="best_dailyc_time" Binding="{Binding best_dailyc_time}" Width="*"/>
+                        <DataGridTextColumn Header="levels_completed" Binding="{Binding levels_completed}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="user_achievements">
+                <DataGrid x:Name="userAchievementsDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="user_id" Binding="{Binding user_id}" Width="*"/>
+                        <DataGridTextColumn Header="status" Binding="{Binding status}" Width="*"/>
+                        <DataGridTextColumn Header="achievement_id" Binding="{Binding achievement_id}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="user_shop_item">
+                <DataGrid x:Name="userShopItemDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="user_id" Binding="{Binding user_id}" Width="*"/>
+                        <DataGridTextColumn Header="item_number" Binding="{Binding item_number}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="leaderboard_speedrun">
+                <DataGrid x:Name="leaderboardSpeedrunDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="user_id" Binding="{Binding user_id}" Width="*"/>
+                        <DataGridTextColumn Header="speedrun_amount" Binding="{Binding speedrun_amount}" Width="*"/>
+                        <DataGridTextColumn Header="date" Binding="{Binding date}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="leaderboard_dailyc">
+                <DataGrid x:Name="leaderboardDailycDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="user_id" Binding="{Binding user_id}" Width="*"/>
+                        <DataGridTextColumn Header="dailyc_time" Binding="{Binding dailyc_time}" Width="*"/>
+                        <DataGridTextColumn Header="date" Binding="{Binding date}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+        <Label x:Name="enterUID" Content="Enter user_id:" Visibility="Collapsed" HorizontalAlignment="Left" Height="30" Margin="50,100,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="EUID" Visibility="Collapsed" HorizontalAlignment="Left" Height="20" Margin="50,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="selectT" Content="Select table" Visibility="Collapsed" HorizontalAlignment="Left" Height="30" Margin="225,100,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox x:Name="select_table" Visibility="Collapsed" HorizontalAlignment="Left" Height="auto" Margin="220,125,0,0" VerticalAlignment="Top" Width="135">
+            <ListBoxItem Content="users" />
+            <ListBoxItem Content="user_stats" />
+            <!--ListBoxItem Content="user_achievements" />
+            <ListBoxItem Content="user_shop_item" /-->
+            <ListBoxItem Content="leaderboard_speedrun" />
+            <ListBoxItem Content="leaderboard_dailyc" />
+        </ListBox>
+
+        <Label x:Name="selectC" Content="Select column:" Visibility="Collapsed" HorizontalAlignment="Left" Height="30" Margin="400,100,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox x:Name="users" Visibility="Collapsed" HorizontalAlignment="Left" Height="auto" Margin="400,125,0,0" VerticalAlignment="Top" Width="140">
+            <ListBoxItem Content="user_id" />
+            <ListBoxItem Content="game_id" />
+            <ListBoxItem Content="google_id" />
+            <ListBoxItem Content="display_name" />
+            <ListBoxItem Content="created_at" />
+            <ListBoxItem Content="last_login" />
+            <ListBoxItem Content="status" />
+        </ListBox>
+        <ListBox x:Name="leaderboard_dailyc" Visibility="Collapsed" HorizontalAlignment="Left" Height="auto" Margin="400,125,0,0" VerticalAlignment="Top" Width="140">
+            <ListBoxItem Content="dailyc_time" />
+            <ListBoxItem Content="date" />
+        </ListBox>
+        <ListBox x:Name="leaderboard_speedrun" Visibility="Collapsed" HorizontalAlignment="Left" Height="auto" Margin="400,125,0,0" VerticalAlignment="Top" Width="140">
+            <ListBoxItem Content="speedrun_amount" />
+            <ListBoxItem Content="date" />
+        </ListBox>
+        <!--ListBox x:Name="user_achievements" Visibility="Collapsed" HorizontalAlignment="Left" Height="auto" Margin="400,125,0,0" VerticalAlignment="Top" Width="140">
+            <ListBoxItem Content="user_id" />
+            <ListBoxItem Content="status" />
+            <ListBoxItem Content="achievement_id" />
+        </ListBox-->
+        <!--ListBox x:Name="user_shop_item" Visibility="Collapsed" HorizontalAlignment="Left" Height="auto" Margin="400,125,0,0" VerticalAlignment="Top" Width="140">
+            <ListBoxItem Content="user_id" />
+            <ListBoxItem Content="item_number" />
+        </ListBox-->
+        <ListBox x:Name="user_stats" Visibility="Collapsed" HorizontalAlignment="Left" Height="auto" Margin="400,125,0,0" VerticalAlignment="Top" Width="140">
+            <ListBoxItem Content="coins" />
+            <ListBoxItem Content="best_speedrun_amount" />
+            <ListBoxItem Content="best_dailyc_time" />
+            <ListBoxItem Content="levels_completed" />
+        </ListBox>
+
+        <Label x:Name="enterV" Content="Enter value:" Visibility="Collapsed" HorizontalAlignment="Left" Height="30" Margin="590,100,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="value" Visibility="Collapsed" HorizontalAlignment="Left" Height="20" Margin="590,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="130"/>
+        <Button x:Name="apply" Content="Apply" Visibility="Collapsed" HorizontalAlignment="Right" Height="25" Margin="0,480,20,0" VerticalAlignment="Top" Width="87" Click="apply_Click"/>
+
+
+        <TabControl x:Name="MyTabControl" Visibility="Collapsed" Height="435">
+            <TabItem Header="Boards" >
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel x:Name="BoardsListContainer">
+
+                    </StackPanel>
+                </ScrollViewer>
+
+            </TabItem>
+            <TabItem Header="Edit" IsSelected="True" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="BoardAContainer" Grid.Row="0" Grid.Column="0">
+
+                    </StackPanel>
+                    <StackPanel x:Name="BoardBContainer" Grid.Row="1" Grid.Column="0">
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Label>ID of the board:</Label>
+                            <TextBox x:Name="BoardID_Input" Width="100" LostFocus="BoardID_Input_LostFocus"/>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label>Size of the board:</Label>
+                            <TextBox x:Name="BoardSize_Input" Width="100" LostFocus="BoardSize_Input_LostFocus" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label>Start pos A:</Label>
+                            <Label Content="X:"/>
+                            <TextBox x:Name="StartPosAX_Input" Width="50"  LostFocus="StartPosAX_Input_LostFocus"/>
+                            <Label Content="Y:"/>
+                            <TextBox x:Name="StartPosAY_Input" Width="50"  LostFocus="StartPosAY_Input_LostFocus"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label>Start pos B:</Label>
+                            <Label Content="X:"/>
+                            <TextBox x:Name="StartPosBX_Input" Width="50"  LostFocus="StartPosBX_Input_LostFocus"/>
+                            <Label Content="Y:"/>
+                            <TextBox x:Name="StartPosBY_Input" Width="50"  LostFocus="StartPosBY_Input_LostFocus"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label>Finish pos A:</Label>
+                            <Label Content="X:"/>
+                            <TextBox x:Name="FinishPosAX_Input" Width="50" LostFocus="FinishPosAX_Input_LostFocus"/>
+                            <Label Content="Y:"/>
+                            <TextBox x:Name="FinishPosAY_Input" Width="50" LostFocus="FinishPosAY_Input_LostFocus"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label>Finish pos B:</Label>
+                            <Label Content="X:"/>
+                            <TextBox x:Name="FinishPosBX_Input" Width="50" LostFocus="FinishPosBX_Input_LostFocus"/>
+                            <Label Content="Y:"/>
+                            <TextBox x:Name="FinishPosBY_Input" Width="50" LostFocus="FinishPosBY_Input_LostFocus"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label>Enemy pos list A:</Label>
+                            <TextBox x:Name="EnemyPosAList_Input" Width="50" LostFocus="EnemyPosAList_Input_LostFocus"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label>Enemy pos list B:</Label>
+                            <TextBox x:Name="EnemyPosBList_Input" Width="50" LostFocus="EnemyPosBList_Input_LostFocus"/>
+                        </StackPanel>
+                        <!--StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+                            <Button x:Name="Submit_Button" Content="Save and export" Width="100" Margin="5" Click="Submit_Button_Click"/>
+
+                        </StackPanel-->
+
+                    </StackPanel>
+                    <Grid Grid.Column="1" Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0">
+                            Layout A :
+                        </Label>
+                        <TextBox x:Name="MazeLayoutA_Input" Grid.Row="1" LostFocus="MazeLayoutA_Input_LostFocus">
+
+                        </TextBox>
+                        <Label Grid.Row="2">
+                            Layout B :
+                        </Label>
+                        <TextBox x:Name="MazeLayoutB_Input" Grid.Row="3" LostFocus="MazeLayoutB_Input_LostFocus">
+
+                        </TextBox>
+                    </Grid>
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
