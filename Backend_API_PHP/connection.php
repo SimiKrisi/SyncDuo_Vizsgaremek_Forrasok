@@ -2,9 +2,9 @@
 
 // --- Adatbázis adatok és kapcsolat létrehozása ---
 $host = "localhost";
-$dbname = "mesterremekdb4";
-$username = "root";
-$password = "";
+$dbname = "syncduodb";
+$username = "syncduogame";
+$password = "abcd4321";
 
 // --- PDO kapcsolat létrehozása ---
 try {
