@@ -22,9 +22,9 @@ namespace ApiForGame
         private static DateTime blockedUntilUtc = DateTime.MinValue;
 
         private readonly HttpClient _client;
-        private readonly string server = "http://192.168.0.151:8000";
-        //http://10.192.111.132:8000
-        //http://192.168.0.151:8000
+        private readonly string server = "http://193.39.13.23/SyncDuoBackend/api";
+        //http://193.39.13.23/SyncDuoBackend/api //for global api reach
+        //http://192.168.0.151:8000     // for local api test
         // API key for authenticating requests. Set via environment variable "API_KEY" or replace the placeholder below.
         private readonly string _apiKey;
 
@@ -76,7 +76,7 @@ namespace ApiForGame
             new Regex("s+e+x+", RegexOptions.IgnoreCase),
             new Regex("p+o+r+n+", RegexOptions.IgnoreCase),
 
-            new Regex("k[\\W_]*[uúûü][\\W_]*r[\\W_]*v[\\W_]*a", RegexOptions.IgnoreCase),
+            new Regex("k[\\W_]*[uï¿½ï¿½ï¿½][\\W_]*r[\\W_]*v[\\W_]*a", RegexOptions.IgnoreCase),
             new Regex("f[\\W_]*a[\\W_]*sz", RegexOptions.IgnoreCase),
             new Regex("p[\\W_]*i[\\W_]*n[\\W_]*a", RegexOptions.IgnoreCase),
             new Regex("g[\\W_]*e[\\W_]*c[\\W_]*i", RegexOptions.IgnoreCase),
@@ -165,19 +165,19 @@ namespace ApiForGame
             if (IsOffline())
             {
                 RegisterImmediateBlock();
-                UnityEngine.Debug.LogWarning($"[API] Offline állapot. Kérés kihagyva: {endpoint}");
+                UnityEngine.Debug.LogWarning($"[API] Offline ï¿½llapot. Kï¿½rï¿½s kihagyva: {endpoint}");
                 return string.Empty;
             }
 
             if (IsApiTemporarilyBlocked())
             {
-                UnityEngine.Debug.LogWarning($"[API] Átmeneti tiltás aktív. Kérés kihagyva: {endpoint}");
+                UnityEngine.Debug.LogWarning($"[API] ï¿½tmeneti tiltï¿½s aktï¿½v. Kï¿½rï¿½s kihagyva: {endpoint}");
                 return string.Empty;
             }
 
             string url = $"{server}/{endpoint}";
 
-            // --- GET / DELETE esetén query string generálás ---
+            // --- GET / DELETE esetï¿½n query string generï¿½lï¿½s ---
             if ((method == HttpMethod.Get || method == HttpMethod.Delete) && data != null)
             {
                 var queryParams = new List<string>();
@@ -191,7 +191,7 @@ namespace ApiForGame
                 }
                 else
                 {
-                    // Anonim objektumok kezelése
+                    // Anonim objektumok kezelï¿½se
                     var props = data.GetType().GetProperties();
                     foreach (var prop in props)
                     {
@@ -209,12 +209,12 @@ namespace ApiForGame
             {
                 request.timeout = RequestTimeoutSeconds;
 
-                // API Kulcs beállítása
+                // API Kulcs beï¿½llï¿½tï¿½sa
                 if (!string.IsNullOrEmpty(_apiKey) && _apiKey != "REPLACE_WITH_YOUR_API_KEY")
                 {
                     request.SetRequestHeader("X-Api-Key", _apiKey);
                 }
-                // --- POST / PUT esetén JSON body ---
+                // --- POST / PUT esetï¿½n JSON body ---
                 if (data != null && method != HttpMethod.Get && method != HttpMethod.Delete)
                 {
                     string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
@@ -224,14 +224,14 @@ namespace ApiForGame
                 }
                 request.downloadHandler = new UnityEngine.Networking.DownloadHandlerBuffer();
 
-                // Kérés indítása és várakozás aszinkron módon
+                // Kï¿½rï¿½s indï¿½tï¿½sa ï¿½s vï¿½rakozï¿½s aszinkron mï¿½don
                 var operation = request.SendWebRequest();
                 while (!operation.isDone)
                 {
                     await Task.Yield();
                 }
 
-                // Eredmény ellenõrzése
+                // Eredmï¿½ny ellenï¿½rzï¿½se
                 if (request.result == UnityEngine.Networking.UnityWebRequest.Result.Success)
                 {
                     RegisterRequestSuccess();
@@ -245,8 +245,8 @@ namespace ApiForGame
                         blockedUntilUtc = DateTime.UtcNow.AddSeconds(FailureCooldownSeconds);
                     }
 
-                    // Ha a telefonon hiba van, a Logcatben most már TÖKÉLETESEN fogjuk látni!
-                    UnityEngine.Debug.LogError($"[API HIBA] Végpont: {endpoint} | Ok: {request.error} | Válasz: {request.downloadHandler.text}");
+                    // Ha a telefonon hiba van, a Logcatben most mï¿½r Tï¿½Kï¿½LETESEN fogjuk lï¿½tni!
+                    UnityEngine.Debug.LogError($"[API HIBA] Vï¿½gpont: {endpoint} | Ok: {request.error} | Vï¿½lasz: {request.downloadHandler.text}");
                     return "";
                 }
             }
@@ -260,7 +260,7 @@ namespace ApiForGame
             //    request.Headers.Add("X-Api-Key", _apiKey);
             //}
 
-            //// --- POST / PUT esetén JSON body ---
+            //// --- POST / PUT esetï¿½n JSON body ---
             //if (data != null && method != HttpMethod.Get && method != HttpMethod.Delete)
             //{
             //    string json = JsonConvert.SerializeObject(data);
@@ -620,7 +620,7 @@ namespace ApiForGame
         {
             var dict = new Dictionary<string, object>();
 
-            // A fields objektum tulajdonságait átmásoljuk a szótárba
+            // A fields objektum tulajdonsï¿½gait ï¿½tmï¿½soljuk a szï¿½tï¿½rba
             foreach (var prop in fields.GetType().GetProperties())
             {
                 dict[prop.Name] = prop.GetValue(fields);
@@ -630,7 +630,7 @@ namespace ApiForGame
             if (error != null)
                 return error;
 
-            // Manuálisan hozzáadjuk a hiányzó ID-t
+            // Manuï¿½lisan hozzï¿½adjuk a hiï¿½nyzï¿½ ID-t
             dict["user_id"] = userId;
 
             return await SendRequestAsync(HttpMethod.Put, "user/update.php", dict);
@@ -644,12 +644,12 @@ namespace ApiForGame
             return await SendRequestAsync(HttpMethod.Delete, "user/delete.php", new { id = userId });
         }
         /// <summary>
-        /// Lekéri a felhasználót a Google azonosítója alapján (Fiók rekonstrukcióhoz)
+        /// Lekï¿½ri a felhasznï¿½lï¿½t a Google azonosï¿½tï¿½ja alapjï¿½n (Fiï¿½k rekonstrukciï¿½hoz)
         /// </summary>
         public async Task<string> SelectUserByGoogleId(string googleId)
         {
-            // Fontos: A PHP fejlesztõnek biztosítania kell, hogy a select.php (vagy egy új végpont)
-            // képes legyen visszaadni a 'user_id'-t, ha csak egy 'google_id'-t kap bemenetként!
+            // Fontos: A PHP fejlesztï¿½nek biztosï¿½tania kell, hogy a select.php (vagy egy ï¿½j vï¿½gpont)
+            // kï¿½pes legyen visszaadni a 'user_id'-t, ha csak egy 'google_id'-t kap bemenetkï¿½nt!
             return await SendRequestAsync(HttpMethod.Get, "user/select.php", new { google_id = googleId });
         }
         #endregion
